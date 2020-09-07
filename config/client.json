@@ -1,0 +1,10 @@
+{
+    "dispatcher": {
+        "host": "dispatcher",
+        "port": 5555
+    },
+    "task_duration": [
+        3,
+        10
+    ]
+}

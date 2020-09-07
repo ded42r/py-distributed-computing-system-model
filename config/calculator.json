@@ -1,0 +1,19 @@
+{
+    "dispatcher": {
+        "host": "dispatcher",
+        "port": 5555
+    },
+    "task_duration": [
+        3,
+        6
+    ],
+    "disability": {
+        "probability": 0.1,
+        "duration": [
+            2,
+            5
+        ],
+        "poll_interval": 10
+    },
+    "heartbeat": 30
+}

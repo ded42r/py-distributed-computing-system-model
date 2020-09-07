@@ -1,0 +1,4 @@
+.idea
+.git
+logs
+.*_cache

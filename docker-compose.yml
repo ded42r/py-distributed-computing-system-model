@@ -1,0 +1,40 @@
+version: '3.7'
+
+networks:
+    meriterra:
+        driver: bridge
+
+services:
+    client:
+        image: python:2.7.18-slim-buster
+        networks:
+            - meriterra
+        volumes:
+            - .:/opt/client
+        working_dir: /opt/client
+        command:  python run_client.py -s config/client.json
+        logging:
+            options:
+                max-size: 50m
+    dispatcher:
+        image: python:2.7.18-slim-buster
+        networks:
+            - meriterra
+        volumes:
+            - .:/opt/dispatcher
+        working_dir: /opt/dispatcher
+        command:  python run_dispatcher.py -s config/dispatcher.json
+        logging:
+            options:
+                max-size: 50m
+    calculator:
+        image: python:2.7.18-slim-buster
+        networks:
+            - meriterra
+        volumes:
+            - .:/opt/calculator
+        working_dir: /opt/calculator
+        command:  python run_calculator.py -s config/calculator.json
+        logging:
+            options:
+                max-size: 50m
